@@ -19,7 +19,6 @@ def talkToMe(audio):
         engine.say(audio)
         engine.runAndWait()
    
-
 def myCommand():
     # "listens for commands"
 
@@ -30,7 +29,6 @@ def myCommand():
         r.pause_threshold = 1
         r.adjust_for_ambient_noise(source, duration=1)
         audio = r.listen(source)
-
     try:
         command = r.recognize_google(audio).lower()
         print('You said: ' + command + '\n')
@@ -39,7 +37,6 @@ def myCommand():
     except sr.UnknownValueError:
         print('Your last command couldn\'t be heard')
         command = myCommand()
-
 
     return command
 
