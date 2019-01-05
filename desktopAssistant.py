@@ -2,9 +2,9 @@ from gtts import gTTS # Import the module for text to speech conversion from gtt
 import speech_recognition as sr # imports the speech regonition package and remaining it as 'sr'
 import os # import os library to interact with the operating system
 import re # module which checks if a given regular expression matches a particular string**
-import pyttsx3
-import webbrowser
-import smtplib
+import pyttsx3 # similar to gTTS but works offline also
+import webbrowser # top interact with the web browser
+import smtplib #defines an SMTP client session object that can be used to send mail to any Internet machine with an SMTP
 import requests
 from weather import Weather
 
@@ -45,7 +45,7 @@ def assistant(command):
     "if statements for executing commands"
 
     if 'open reddit' in command:
-        reg_ex = re.search('open reddit (.*)', command)
+        chrome_path = \Program Files (x86)\Google\Chrome\Application
         url = 'https://www.reddit.com/'
         if reg_ex:
             subreddit = reg_ex.group(1)
