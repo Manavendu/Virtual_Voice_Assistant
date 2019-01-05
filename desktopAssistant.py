@@ -1,7 +1,7 @@
-from gtts import gTTS
-import speech_recognition as sr
-import os
-import re
+from gtts import gTTS # Import the module for text to speech conversion from gtts API
+import speech_recognition as sr # imports the speech regonition package and remaining it as 'sr'
+import os # import os library to interact with the operating system
+import re # module which checks if a given regular expression matches a particular string**
 import pyttsx3
 import webbrowser
 import smtplib
