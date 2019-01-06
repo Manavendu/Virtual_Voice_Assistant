@@ -8,17 +8,14 @@ import smtplib #defines an SMTP client session object that can be used to send m
 import requests
 from weather import Weather
 
-engine = pyttsx3.init()
-
-def talkToMe(audio):
+def talkToMe(audio):  #string is given as parameter after speech is coverted to text 
     # "speaks audio passed as argument"
 
     print(audio)
-    for line in audio.splitlines():
-        os.system("say " + audio)
-        engine.say(audio)
-        engine.runAndWait()
-   
+    tts = gTTS(text=audio, lang='en')
+    tts.save('audio.mp3')
+    os.system('mpg123 audio.mp3')
+    
 def myCommand():
     # "listens for commands"
 
@@ -30,7 +27,7 @@ def myCommand():
         r.adjust_for_ambient_noise(source, duration=1)
         audio = r.listen(source)
     try:
-        command = r.recognize_google(audio).lower()
+        command = r.recognize_google(audio).lower() # recognise_google is a method in the class recogniser mentioned above
         print('You said: ' + command + '\n')
 
     #loop back to continue to listen for commands if unrecognizable speech is received
