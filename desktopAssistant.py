@@ -114,7 +114,7 @@ def assistant(command):
             mail.login('username', 'password')
 
             #send message
-            mail.sendmail('John Fisher', 'JARVIS2.0@protonmail.com', content)
+            mail.sendmail('Christian', 'manav995@gmail.com', content)
 
             #end mail connection
             mail.close()
